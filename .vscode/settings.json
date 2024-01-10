@@ -1,0 +1,12 @@
+{
+    "iis.configDir": "",
+    "files.associations": {
+        "common_types.h": "c",
+        "dio_drv.h": "c",
+        "dio_if.h": "c",
+        "main.h": "c",
+        "cpu_set.h": "c",
+        "sn76489.h": "c",
+        "gpio.h": "c"
+    }
+}

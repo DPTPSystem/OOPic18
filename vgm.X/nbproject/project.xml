@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>com.microchip.mplab.nbide.embedded.makeproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/make-project/1">
+            <name>vgm</name>
+            <creation-uuid>e88f665c-5e52-425b-8156-e1ffbd101c8c</creation-uuid>
+            <make-project-type>0</make-project-type>
+            <sourceEncoding>ISO-8859-1</sourceEncoding>
+            <make-dep-projects/>
+            <sourceRootList>
+                <sourceRootElem>../app</sourceRootElem>
+                <sourceRootElem>../app/inc</sourceRootElem>
+                <sourceRootElem>../modules/interfaces</sourceRootElem>
+                <sourceRootElem>../modules/sn76489</sourceRootElem>
+                <sourceRootElem>../drivers/microchip/PIC18F452/dio</sourceRootElem>
+            </sourceRootList>
+            <confList>
+                <confElem>
+                    <name>default</name>
+                    <type>2</type>
+                </confElem>
+            </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
+        </data>
+    </configuration>
+</project>
