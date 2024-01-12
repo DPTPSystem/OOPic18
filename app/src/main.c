@@ -3,7 +3,7 @@
  * title:       main program, VGM Player
  * autor:       DPTP System
  * date:        2024.01.04.
- * email:       don_peter@freemail.hu
+ * email:       don_peter[kukac]freemail[pont]hu
  * device:      PIC18
  * platform:    C Code, MPLAB X
  * MCU:         PIC18F4x2 and PIC18F46k22
@@ -80,7 +80,12 @@ int main()
 
     while(1)
     {
-        led_toggle();
+        // If 1ms
+        if(one_us_count_u16 >= 1000)
+        {
+            one_us_count_u16 = 0;
+            led_toggle();
+        }
     }
         
 }

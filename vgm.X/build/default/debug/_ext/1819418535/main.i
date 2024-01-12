@@ -4277,17 +4277,21 @@ void timer0(void);
 # 16 "../app/src/main.c" 2
 
 # 1 "../app/inc\\interrupt.h" 1
-# 14 "../app/inc\\interrupt.h"
+# 13 "../app/inc\\interrupt.h"
+volatile uint16_t one_us_count_u16 = 0;
+
 void __attribute__((picinterrupt(("high_priority")))) hi_isr(void)
 {
 
 }
+
 
 void __attribute__((picinterrupt(("low_priority")))) lo_isr(void)
 {
 
     if (INTCONbits.TMR0IF)
  {
+        one_us_count_u16++;
   TMR0L = 0xF0;
         LATDbits.LATD0 = !LATDbits.LATD0;
         INTCONbits.TMR0IF = 0;
@@ -4346,7 +4350,12 @@ int main()
 
     while(1)
     {
-        led_toggle();
+
+        if(one_us_count_u16 >= 1000)
+        {
+            one_us_count_u16 = 0;
+            led_toggle();
+        }
     }
 
 }

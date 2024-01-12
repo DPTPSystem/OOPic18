@@ -540,49 +540,58 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x EBTR1        =  OFF ]
 "46
 [p x EBTRB        =  OFF       ]
+"13 ../app/inc\interrupt.h
+[; ;../app/inc\interrupt.h: 13: volatile uint16_t one_us_count_u16 = 0;
+[v _one_us_count_u16 `Vus ~T0 @X0 1 e ]
+[i _one_us_count_u16
+-> -> 0 `i `us
+]
 [v $root$_hi_isr `(v ~T0 @X0 0 e ]
-"14 ../app/inc\interrupt.h
-[; ;../app/inc\interrupt.h: 14: void __attribute__((picinterrupt(("high_priority")))) hi_isr(void)
-[v _hi_isr `(v ~T38 @X0 1 ef ]
 "15
-[; ;../app/inc\interrupt.h: 15: {
+[; ;../app/inc\interrupt.h: 15: void __attribute__((picinterrupt(("high_priority")))) hi_isr(void)
+[v _hi_isr `(v ~T38 @X0 1 ef ]
+"16
+[; ;../app/inc\interrupt.h: 16: {
 {
 [e :U _hi_isr ]
 [f ]
-"17
-[; ;../app/inc\interrupt.h: 17: }
+"18
+[; ;../app/inc\interrupt.h: 18: }
 [e :UE 246 ]
 }
 [v $root$_lo_isr `(v ~T0 @X0 0 e ]
-"19
-[; ;../app/inc\interrupt.h: 19: void __attribute__((picinterrupt(("low_priority")))) lo_isr(void)
+"21
+[; ;../app/inc\interrupt.h: 21: void __attribute__((picinterrupt(("low_priority")))) lo_isr(void)
 [v _lo_isr `(v ~T39 @X0 1 ef ]
-"20
-[; ;../app/inc\interrupt.h: 20: {
+"22
+[; ;../app/inc\interrupt.h: 22: {
 {
 [e :U _lo_isr ]
 [f ]
-"22
-[; ;../app/inc\interrupt.h: 22:     if (INTCONbits.TMR0IF)
-[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 248  ]
-"23
-[; ;../app/inc\interrupt.h: 23:  {
-{
 "24
-[; ;../app/inc\interrupt.h: 24:   TMR0L = 0xF0;
-[e = _TMR0L -> -> 240 `i `uc ]
+[; ;../app/inc\interrupt.h: 24:     if (INTCONbits.TMR0IF)
+[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 248  ]
 "25
-[; ;../app/inc\interrupt.h: 25:         LATDbits.LATD0 = !LATDbits.LATD0;
-[e = . . _LATDbits 0 0 -> -> ! != -> . . _LATDbits 0 0 `i -> 0 `i `i `uc ]
+[; ;../app/inc\interrupt.h: 25:  {
+{
 "26
-[; ;../app/inc\interrupt.h: 26:         INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;../app/inc\interrupt.h: 26:         one_us_count_u16++;
+[e ++ _one_us_count_u16 -> -> 1 `i `Vus ]
 "27
-[; ;../app/inc\interrupt.h: 27:     }
+[; ;../app/inc\interrupt.h: 27:   TMR0L = 0xF0;
+[e = _TMR0L -> -> 240 `i `uc ]
+"28
+[; ;../app/inc\interrupt.h: 28:         LATDbits.LATD0 = !LATDbits.LATD0;
+[e = . . _LATDbits 0 0 -> -> ! != -> . . _LATDbits 0 0 `i -> 0 `i `i `uc ]
+"29
+[; ;../app/inc\interrupt.h: 29:         INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"30
+[; ;../app/inc\interrupt.h: 30:     }
 }
 [e :U 248 ]
-"28
-[; ;../app/inc\interrupt.h: 28: }
+"31
+[; ;../app/inc\interrupt.h: 31: }
 [e :UE 247 ]
 }
 "32 ../app/src/main.c
@@ -595,10 +604,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "34
 [; ;../app/src/main.c: 34:     static uint8_t i;
-[v F2505 `uc ~T0 @X0 1 s i ]
+[v F2506 `uc ~T0 @X0 1 s i ]
 "35
 [; ;../app/src/main.c: 35:     if(i++ % 2)
-[e $ ! != % -> ++ F2505 -> -> 1 `i `uc `i -> 2 `i -> 0 `i 250  ]
+[e $ ! != % -> ++ F2506 -> -> 1 `i `uc `i -> 2 `i -> 0 `i 250  ]
 "36
 [; ;../app/src/main.c: 36:     {
 {
@@ -695,16 +704,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "82
 [; ;../app/src/main.c: 82:     {
 {
-"83
-[; ;../app/src/main.c: 83:         led_toggle();
-[e ( _led_toggle ..  ]
 "84
-[; ;../app/src/main.c: 84:     }
+[; ;../app/src/main.c: 84:         if(one_us_count_u16 >= 1000)
+[e $ ! >= -> _one_us_count_u16 `ui -> -> 1000 `i `ui 257  ]
+"85
+[; ;../app/src/main.c: 85:         {
+{
+"86
+[; ;../app/src/main.c: 86:             one_us_count_u16 = 0;
+[e = _one_us_count_u16 -> -> 0 `i `us ]
+"87
+[; ;../app/src/main.c: 87:             led_toggle();
+[e ( _led_toggle ..  ]
+"88
+[; ;../app/src/main.c: 88:         }
+}
+[e :U 257 ]
+"89
+[; ;../app/src/main.c: 89:     }
 }
 [e :U 254 ]
 [e $U 255  ]
 [e :U 256 ]
-"86
-[; ;../app/src/main.c: 86: }
+"91
+[; ;../app/src/main.c: 91: }
 [e :UE 253 ]
 }

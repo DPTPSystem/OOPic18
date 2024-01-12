@@ -20,6 +20,7 @@ A programozási és tesztelési feladatok folyamatosan fognak bővülni, függő
 * 2024.01.04. - alap program elkészült, fórdul
 * 2024.01.09. - IO driver alap IO elérésekhez elkészült
 * 2024.01.10. - Megszakítások és timer0 1uS-es időzítés elkészült (callback miatt lehet szükséges később)
+* 2024.01.12. - 1uS megszakítás beállítva és fő ciklusban egy 1mS-es feltétel ág.
 
 # Cél
 * OO programozás és struktúrális programozás tanulása, elmélyítése

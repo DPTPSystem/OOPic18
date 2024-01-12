@@ -3,7 +3,7 @@
  * title:       dio driver
  * autor:       DPTP System
  * date:        2024.01.09.
- * email:       don_peter@freemail.hu
+ * email:       don_peter[kukac]freemail[pont]hu
  * device:      PIC18
  * platform:    C Code, MPLAB X
  * MCU:         PIC18F452

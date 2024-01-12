@@ -2,8 +2,8 @@
  * file name:   main.h
  * autor:       DPTP System
  * date:        2024.01.04.
- * email:       don_peter@freemail.hu
- * device:      STM32
+ * email:       don_peter[kukac]freemail[pont]hu
+ * device:      PIC18
  * platform:    C Code, MPLAB X
  * MCU:         PIC18F4x2 and PIC18F46k22
 ******************************************************/

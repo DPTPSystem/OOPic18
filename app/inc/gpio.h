@@ -3,7 +3,7 @@
  * title:       gpio pin, dio driver init, variables and prototypes
  * autor:       DPTP System
  * date:        2024.01.04.
- * email:       don_peter@freemail.hu
+ * email:       don_peter[kukac]freemail[pont]hu
  * device:      PIC18
  * platform:    C Code, VS Code project
  * MCU:         PIC18F452

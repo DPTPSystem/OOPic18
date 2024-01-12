@@ -2,7 +2,7 @@
  * file name:   sn76489.c
  * autor:       DPTP System
  * date:        2024.01.03.
- * email:       don_peter@freemail.hu
+ * email:       don_peter[kukac]freemail[pont]hu
  * device:      SN76489AN Driver
  * platform:    C Code, MPLAB X
  * MCU:         PIC18F4x2 and PIC18F46k22
