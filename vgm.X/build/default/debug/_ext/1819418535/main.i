@@ -4106,18 +4106,19 @@ typedef struct sn76489_cfg_tst
 
 } sn76489_cfg_tst;
 
-typedef struct sn76489_tst
+typedef struct sn76489_tst sn76489_tst;
+struct sn76489_tst
 {
 
     sn76489_cfg_tst config_st;
     sn76489_status_ten status_en;
 
 
-    void (*write_enabled)(struct sn76489_tst *self, _Bool high_or_low_u8);
-    void (*write_port)(struct sn76489_tst *self, uint8_t data_u8);
-    void (*send_byte)(struct sn76489_tst *self, uint8_t byte_u8);
-    void (*psg_silence)(struct sn76489_tst *self);
-}sn76489_tst;
+    void (*write_enabled)(sn76489_tst *self, _Bool high_or_low_u8);
+    void (*write_port)(sn76489_tst *self, uint8_t data_u8);
+    void (*send_byte)(sn76489_tst *self, uint8_t byte_u8);
+    void (*psg_silence)(sn76489_tst *self);
+};
 
 void sn76489_init(sn76489_tst *self);
 # 15 "../app/inc\\main.h" 2
@@ -4274,15 +4275,68 @@ extern dio_if_tst *led_out_pst;
 void gpio_init_pins(void);
 void gpio_callback(void);
 void timer0(void);
+void init_usart(void);
 # 16 "../app/src/main.c" 2
 
+# 1 "../drivers/microchip/PIC18F452/uart/inc\\uart.h" 1
+# 28 "../drivers/microchip/PIC18F452/uart/inc\\uart.h"
+typedef enum UART_STATE
+{
+    UART_INIT = 0,
+    UART_READY,
+    UART_ERROR
+}uart_state_ten;
+
+typedef struct uart_config_tst uart_config_tst;
+struct uart_config_tst
+{
+    void (*set_baud)(uint32_t baud_rate_u32);
+};
+
+typedef struct uart_tst *uart_tst;
+struct uart_tst
+{
+
+    uart_config_tst uart_conf_st;
+
+
+    uart_state_ten state_en;
+    uint8_t read_data_u8;
+    uint8_t buff_u8[64];
+    uint8_t buff_index_u8;
+    uint32_t data_size_u32;
+    uint8_t (*read)(uart_tst self, uint8_t data_u8);
+    void (*write)(uint8_t data_u8);
+    void (*buff_clear)(uart_tst self);
+};
+
+extern volatile uart_tst uart_st;
+
+void uart_drv_init(uart_tst self);
+# 17 "../app/src/main.c" 2
+
 # 1 "../app/inc\\interrupt.h" 1
-# 13 "../app/inc\\interrupt.h"
+# 14 "../app/inc\\interrupt.h"
 volatile uint16_t one_us_count_u16 = 0;
 
 void __attribute__((picinterrupt(("high_priority")))) hi_isr(void)
 {
 
+    if(PIR1bits.RCIF){
+  if(RCSTA & 6){
+   unsigned char temp;
+   RCSTAbits.SREN = 0;
+   temp = RCREG;
+   RCSTAbits.SREN = 1;
+  }else{
+
+
+
+
+
+  }
+  PIR1bits.RCIF = 0;
+ }
 }
 
 
@@ -4291,14 +4345,20 @@ void __attribute__((picinterrupt(("low_priority")))) lo_isr(void)
 
     if (INTCONbits.TMR0IF)
  {
-        one_us_count_u16++;
   TMR0L = 0xF0;
-        LATDbits.LATD0 = !LATDbits.LATD0;
+
+        one_us_count_u16++;
         INTCONbits.TMR0IF = 0;
     }
 }
-# 17 "../app/src/main.c" 2
-# 32 "../app/src/main.c"
+# 18 "../app/src/main.c" 2
+
+
+
+
+
+volatile uart_tst uart_st;
+# 34 "../app/src/main.c"
  void led_toggle()
 {
     static uint8_t i;
@@ -4331,6 +4391,19 @@ void setup_pins()
  INTCONbits.GIEH = 1;
     INTCONbits.GIEL = 1;
  INTCONbits.GIE = 1;
+
+    PIE1bits.RCIE = 1;
+ IPR1bits.RCIP = 1;
+
+ PIE1bits.TXIE = 0;
+ IPR1bits.TXIP = 0;
+
+ ADCON1 = 0x07;
+ ADCON0 = 0;
+
+ CCP1CON = 0;
+
+    init_usart();
 }
 
 
@@ -4342,11 +4415,16 @@ int main()
 
 
     setup_pins();
-    timer0();
+
+
+    uart_drv_init(&uart_st);
+
 
 
 
     led_out_pst->set(led_out_pst, 0);
+
+    timer0();
 
     while(1)
     {

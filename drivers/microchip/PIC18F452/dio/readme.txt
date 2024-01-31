@@ -1,6 +1,0 @@
-Supported devices:
-       	dsPIC33FJ128MC202
-	dsPIC33FJ128MC802
-       	dsPIC33FJ64MC202
-	dsPIC33FJ64MC802
-       	dsPIC33FJ32MC302

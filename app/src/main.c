@@ -14,11 +14,13 @@
 //------------------------------------------------------------------------------
 #include "main.h"
 #include "gpio.h"
+#include "uart.h"
 #include "interrupt.h"
 
 //------------------------------------------------------------------------------
 // Variables
 //------------------------------------------------------------------------------
+volatile uart_tst uart_st;
 //sn76489_tst sn76489_st;
 
 //------------------------------------------------------------------------------
@@ -61,6 +63,19 @@ void setup_pins()
 	INTCONbits.GIEH = 1;		// A magas prioritású interrupt
     INTCONbits.GIEL = 1;		// Az alacsony prioritású interrupt
 	INTCONbits.GIE = 1;			// Megszakítások engedélyezése
+    
+    PIE1bits.RCIE = 1;			// USART Receive Interrupt Enable bit
+	IPR1bits.RCIP = 1;			// USART Receive Interrupt Priority bit
+	
+	PIE1bits.TXIE = 0;			// USART Transmit Interrupt disabled bit
+	IPR1bits.TXIP = 0;			// USART Transmit Interrupt Priority bit
+
+	ADCON1 = 0x07;				// Minden digitális
+	ADCON0 = 0;
+
+	CCP1CON = 0;				// Coperátorok kikapcsolva
+    
+    init_usart();
 }
 
 
@@ -72,11 +87,16 @@ int main()
   
     // All pin setting
     setup_pins();
-    timer0();
+    
+    // uart driver init
+    uart_drv_init(&uart_st);
+    
     //sn76489_init(&sn76489_st);
 
     // As long as everything is fine, the LED does not light up
     led_out_pst->set(led_out_pst, 0); 
+    
+    timer0();   // timer enabled (1uS))
 
     while(1)
     {

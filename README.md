@@ -4,8 +4,8 @@
 * autor:       DPTP System - Tóth Péter
 * date:        2024.01.04.
 * email:       don_peter[kukac]freemail[pont]hu
-* device:      PIC18
-* platform:    C Code, MPLAB X
+* device:      Special PIC18 device
+* platform:    VS Code, MPLAB X, C Code, XC8
 * MCU:         PIC18F4x2 and PIC18F46k22
 
 # Leírás
@@ -16,11 +16,13 @@ a drivert mindenkép illeszteni illetve áttírni szükséges.
 # Folyamat
 A programozási és tesztelési feladatok folyamatosan fognak bővülni, függően a lehetőségeimtől. Egyes részek közt akár hetek vagy hónapok is eltellhetnek. A projekt várható befejezése nincs meghatározva, nem sürgős.
 
-# Projekt halladás
-* 2024.01.04. - alap program elkészült, fórdul
+# Projekt haladás
+* 2024.01.04. - alap program elkészült, fordul
 * 2024.01.09. - IO driver alap IO elérésekhez elkészült
 * 2024.01.10. - Megszakítások és timer0 1uS-es időzítés elkészült (callback miatt lehet szükséges később)
 * 2024.01.12. - 1uS megszakítás beállítva és fő ciklusban egy 1mS-es feltétel ág.
+* 2024.01.30. - uart megszakítás kezelése, beállítása. Ha az uart driver elkészül, akkor lehet csak véglegesíteni a megszakítás kezelést
+* 2024.01.31. - uart driver hozzáadása a projekthez (még nincs befejezve)
 
 # Cél
 * OO programozás és struktúrális programozás tanulása, elmélyítése

@@ -14,86 +14,86 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;../modules/sn76489/src/sn76489.c: 13: static void write_enabled(sn76489_tst *self, _Bool high_or_low_u8)
 [c E230 0 1 2 3 4 .. ]
 [n E230 SN76489_STATUS SN76489_STATUS_INIT SN76489_STATUS_ONLINE SN76489_STATUS_OFFLINE SN76489_STATUS_BUSY SN76489_STATUS_UNKNOWN  ]
-[v F244 `(v ~T0 @X0 0 tf2`*S4`a ]
-[v F248 `(v ~T0 @X0 0 tf2`*S4`uc ]
-[v F252 `(v ~T0 @X0 0 tf2`*S4`uc ]
-[v F256 `(v ~T0 @X0 0 tf1`*S4 ]
-"44 ../modules/sn76489/inc\sn76489.h
-[; ;../modules/sn76489/inc\sn76489.h: 44: {
-[s S4 `S3 1 `E230 1 `*F244 1 `*F248 1 `*F252 1 `*F256 1 ]
-[n S4 sn76489_tst config_st status_en write_enabled write_port send_byte psg_silence ]
+[v F246 `(v ~T0 @X0 0 tf2`*S5`a ]
+[v F250 `(v ~T0 @X0 0 tf2`*S5`uc ]
+[v F254 `(v ~T0 @X0 0 tf2`*S5`uc ]
+[v F258 `(v ~T0 @X0 0 tf1`*S5 ]
+"45 ../modules/sn76489/inc\sn76489.h
+[; ;../modules/sn76489/inc\sn76489.h: 45: {
+[s S5 `S3 1 `E230 1 `*F246 1 `*F250 1 `*F254 1 `*F258 1 ]
+[n S5 sn76489_tst config_st status_en write_enabled write_port send_byte psg_silence ]
 "13 ../modules/sn76489/src/sn76489.c
 [; ;../modules/sn76489/src/sn76489.c: 13: static void write_enabled(sn76489_tst *self, _Bool high_or_low_u8)
-[v _write_enabled `(v ~T0 @X0 1 sf2`*S4`a ]
+[v _write_enabled `(v ~T0 @X0 1 sf2`*S5`a ]
 "14
 [; ;../modules/sn76489/src/sn76489.c: 14: {
 {
 [e :U _write_enabled ]
 "13
 [; ;../modules/sn76489/src/sn76489.c: 13: static void write_enabled(sn76489_tst *self, _Bool high_or_low_u8)
-[v _self `*S4 ~T0 @X0 1 r1 ]
+[v _self `*S5 ~T0 @X0 1 r1 ]
 [v _high_or_low_u8 `a ~T0 @X0 1 r2 ]
 "14
 [; ;../modules/sn76489/src/sn76489.c: 14: {
 [f ]
 "16
 [; ;../modules/sn76489/src/sn76489.c: 16:     if(self->status_en != SN76489_STATUS_ONLINE)
-[e $ ! != -> . *U _self 1 `ui -> . `E230 1 `ui 8  ]
+[e $ ! != -> . *U _self 1 `ui -> . `E230 1 `ui 10  ]
 "17
 [; ;../modules/sn76489/src/sn76489.c: 17:     {
 {
 "18
 [; ;../modules/sn76489/src/sn76489.c: 18:         return;
-[e $UE 7  ]
+[e $UE 9  ]
 "19
 [; ;../modules/sn76489/src/sn76489.c: 19:     }
 }
-[e :U 8 ]
+[e :U 10 ]
 "21
 [; ;../modules/sn76489/src/sn76489.c: 21: }
-[e :UE 7 ]
+[e :UE 9 ]
 }
 "23
 [; ;../modules/sn76489/src/sn76489.c: 23: static void write_port(sn76489_tst *self, uint8_t data_u8)
-[v _write_port `(v ~T0 @X0 1 sf2`*S4`uc ]
+[v _write_port `(v ~T0 @X0 1 sf2`*S5`uc ]
 "24
 [; ;../modules/sn76489/src/sn76489.c: 24: {
 {
 [e :U _write_port ]
 "23
 [; ;../modules/sn76489/src/sn76489.c: 23: static void write_port(sn76489_tst *self, uint8_t data_u8)
-[v _self `*S4 ~T0 @X0 1 r1 ]
+[v _self `*S5 ~T0 @X0 1 r1 ]
 [v _data_u8 `uc ~T0 @X0 1 r2 ]
 "24
 [; ;../modules/sn76489/src/sn76489.c: 24: {
 [f ]
 "26
 [; ;../modules/sn76489/src/sn76489.c: 26:     if(self->status_en != SN76489_STATUS_ONLINE)
-[e $ ! != -> . *U _self 1 `ui -> . `E230 1 `ui 10  ]
+[e $ ! != -> . *U _self 1 `ui -> . `E230 1 `ui 12  ]
 "27
 [; ;../modules/sn76489/src/sn76489.c: 27:     {
 {
 "28
 [; ;../modules/sn76489/src/sn76489.c: 28:         return;
-[e $UE 9  ]
+[e $UE 11  ]
 "29
 [; ;../modules/sn76489/src/sn76489.c: 29:     }
 }
-[e :U 10 ]
+[e :U 12 ]
 "31
 [; ;../modules/sn76489/src/sn76489.c: 31: }
-[e :UE 9 ]
+[e :UE 11 ]
 }
 "33
 [; ;../modules/sn76489/src/sn76489.c: 33: static void send_byte(sn76489_tst *self, uint8_t byte_u8)
-[v _send_byte `(v ~T0 @X0 1 sf2`*S4`uc ]
+[v _send_byte `(v ~T0 @X0 1 sf2`*S5`uc ]
 "34
 [; ;../modules/sn76489/src/sn76489.c: 34: {
 {
 [e :U _send_byte ]
 "33
 [; ;../modules/sn76489/src/sn76489.c: 33: static void send_byte(sn76489_tst *self, uint8_t byte_u8)
-[v _self `*S4 ~T0 @X0 1 r1 ]
+[v _self `*S5 ~T0 @X0 1 r1 ]
 [v _byte_u8 `uc ~T0 @X0 1 r2 ]
 "34
 [; ;../modules/sn76489/src/sn76489.c: 34: {
@@ -104,17 +104,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _temp_u16 -> -> 0 `i `us ]
 "38
 [; ;../modules/sn76489/src/sn76489.c: 38:     if(self->status_en != SN76489_STATUS_ONLINE)
-[e $ ! != -> . *U _self 1 `ui -> . `E230 1 `ui 12  ]
+[e $ ! != -> . *U _self 1 `ui -> . `E230 1 `ui 14  ]
 "39
 [; ;../modules/sn76489/src/sn76489.c: 39:     {
 {
 "40
 [; ;../modules/sn76489/src/sn76489.c: 40:         return;
-[e $UE 11  ]
+[e $UE 13  ]
 "41
 [; ;../modules/sn76489/src/sn76489.c: 41:     }
 }
-[e :U 12 ]
+[e :U 14 ]
 "43
 [; ;../modules/sn76489/src/sn76489.c: 43:  temp_u16 = byte_u8>>7;
 [e = _temp_u16 -> >> -> _byte_u8 `i -> 7 `i `us ]
@@ -150,34 +150,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( *U . *U _self 2 (2 , _self -> -> 1 `i `a ]
 "55
 [; ;../modules/sn76489/src/sn76489.c: 55: }
-[e :UE 11 ]
+[e :UE 13 ]
 }
 "59
 [; ;../modules/sn76489/src/sn76489.c: 59: static void psg_silence(sn76489_tst *self)
-[v _psg_silence `(v ~T0 @X0 1 sf1`*S4 ]
+[v _psg_silence `(v ~T0 @X0 1 sf1`*S5 ]
 "60
 [; ;../modules/sn76489/src/sn76489.c: 60: {
 {
 [e :U _psg_silence ]
 "59
 [; ;../modules/sn76489/src/sn76489.c: 59: static void psg_silence(sn76489_tst *self)
-[v _self `*S4 ~T0 @X0 1 r1 ]
+[v _self `*S5 ~T0 @X0 1 r1 ]
 "60
 [; ;../modules/sn76489/src/sn76489.c: 60: {
 [f ]
 "61
 [; ;../modules/sn76489/src/sn76489.c: 61:     if(self->status_en != SN76489_STATUS_ONLINE)
-[e $ ! != -> . *U _self 1 `ui -> . `E230 1 `ui 14  ]
+[e $ ! != -> . *U _self 1 `ui -> . `E230 1 `ui 16  ]
 "62
 [; ;../modules/sn76489/src/sn76489.c: 62:     {
 {
 "63
 [; ;../modules/sn76489/src/sn76489.c: 63:         return;
-[e $UE 13  ]
+[e $UE 15  ]
 "64
 [; ;../modules/sn76489/src/sn76489.c: 64:     }
 }
-[e :U 14 ]
+[e :U 16 ]
 "65
 [; ;../modules/sn76489/src/sn76489.c: 65:     self->status_en = SN76489_STATUS_BUSY;
 [e = . *U _self 1 . `E230 3 ]
@@ -198,18 +198,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . *U _self 1 . `E230 1 ]
 "71
 [; ;../modules/sn76489/src/sn76489.c: 71: }
-[e :UE 13 ]
+[e :UE 15 ]
 }
 "73
 [; ;../modules/sn76489/src/sn76489.c: 73: void sn76489_init(sn76489_tst *self)
-[v _sn76489_init `(v ~T0 @X0 1 ef1`*S4 ]
+[v _sn76489_init `(v ~T0 @X0 1 ef1`*S5 ]
 "74
 [; ;../modules/sn76489/src/sn76489.c: 74: {
 {
 [e :U _sn76489_init ]
 "73
 [; ;../modules/sn76489/src/sn76489.c: 73: void sn76489_init(sn76489_tst *self)
-[v _self `*S4 ~T0 @X0 1 r1 ]
+[v _self `*S5 ~T0 @X0 1 r1 ]
 "74
 [; ;../modules/sn76489/src/sn76489.c: 74: {
 [f ]
@@ -230,5 +230,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . *U _self 1 . `E230 1 ]
 "80
 [; ;../modules/sn76489/src/sn76489.c: 80: }
-[e :UE 15 ]
+[e :UE 17 ]
 }

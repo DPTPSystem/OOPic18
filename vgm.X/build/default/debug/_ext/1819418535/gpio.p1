@@ -86,6 +86,73 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4866
 [; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 4866: extern volatile unsigned char TMR0L __attribute__((address(0xFD6)));
 [v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
+"2936
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 2936: extern volatile unsigned char TXSTA __attribute__((address(0xFAC)));
+[v _TXSTA `Vuc ~T0 @X0 0 e@4012 ]
+"2947
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 2947:     struct {
+[s S118 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S118 . TX9D TRMT BRGH . SYNC TXEN TX9 CSRC ]
+"2957
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 2957:     struct {
+[s S119 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
+[n S119 . TXD8 . TX8_9 ]
+"2962
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 2962:     struct {
+[s S120 :6 `uc 1 :1 `uc 1 ]
+[n S120 . . NOT_TX8 ]
+"2966
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 2966:     struct {
+[s S121 :6 `uc 1 :1 `uc 1 ]
+[n S121 . . nTX8 ]
+"2970
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 2970:     struct {
+[s S122 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S122 . TX9D1 TRMT1 BRGH1 . SYNC1 TXEN1 TX91 CSRC1 ]
+"2946
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 2946: typedef union {
+[u S117 `S118 1 `S119 1 `S120 1 `S121 1 `S122 1 ]
+[n S117 . . . . . . ]
+"2981
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 2981: extern volatile TXSTAbits_t TXSTAbits __attribute__((address(0xFAC)));
+[v _TXSTAbits `VS117 ~T0 @X0 0 e@4012 ]
+"2712
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 2712: extern volatile unsigned char RCSTA __attribute__((address(0xFAB)));
+[v _RCSTA `Vuc ~T0 @X0 0 e@4011 ]
+"3228
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 3228: extern volatile unsigned char SPBRG __attribute__((address(0xFAF)));
+[v _SPBRG `Vuc ~T0 @X0 0 e@4015 ]
+"2723
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 2723:     struct {
+[s S104 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S104 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"2733
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 2733:     struct {
+[s S105 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
+[n S105 . RCD8 . RC8_9 ]
+"2738
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 2738:     struct {
+[s S106 :6 `uc 1 :1 `uc 1 ]
+[n S106 . . NOT_RC8 ]
+"2742
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 2742:     struct {
+[s S107 :6 `uc 1 :1 `uc 1 ]
+[n S107 . . nRC8 ]
+"2746
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 2746:     struct {
+[s S108 :6 `uc 1 :1 `uc 1 ]
+[n S108 . . RC9 ]
+"2750
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 2750:     struct {
+[s S109 :5 `uc 1 :1 `uc 1 ]
+[n S109 . . SRENA ]
+"2722
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 2722: typedef union {
+[u S103 `S104 1 `S105 1 `S106 1 `S107 1 `S108 1 `S109 1 ]
+[n S103 . . . . . . . ]
+"2755
+[; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 2755: extern volatile RCSTAbits_t RCSTAbits __attribute__((address(0xFAB)));
+[v _RCSTAbits `VS103 ~T0 @X0 0 e@4011 ]
 "54 C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h
 [; ;C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f452.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -599,4 +666,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "76
 [; ;../app/src/gpio.c: 76: }
 [e :UE 243 ]
+}
+"78
+[; ;../app/src/gpio.c: 78: void init_usart(void){
+[v _init_usart `(v ~T0 @X0 1 ef ]
+{
+[e :U _init_usart ]
+[f ]
+"80
+[; ;../app/src/gpio.c: 80:  TXSTA = 0b00100000;
+[e = _TXSTA -> -> 32 `i `uc ]
+"81
+[; ;../app/src/gpio.c: 81:     TXSTAbits.BRGH = 0;
+[e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
+"82
+[; ;../app/src/gpio.c: 82:  RCSTA = 0b00010000;
+[e = _RCSTA -> -> 16 `i `uc ]
+"88
+[; ;../app/src/gpio.c: 88:  SPBRG = 64;
+[e = _SPBRG -> -> 64 `i `uc ]
+"89
+[; ;../app/src/gpio.c: 89:  RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"90
+[; ;../app/src/gpio.c: 90: }
+[e :UE 244 ]
 }

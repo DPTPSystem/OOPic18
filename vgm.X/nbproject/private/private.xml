@@ -3,14 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Munka/Sajat/VGM/modules/sn76489/inc/sn76489.h</file>
-            <file>file:/C:/Users/ptoth2/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8/pic/include/proc/pic18f452.h</file>
-            <file>file:/C:/Munka/Sajat/VGM/app/src/main.c</file>
-            <file>file:/C:/Munka/Sajat/VGM/drivers/microchip/PIC18F452/dio/src/dio_drv.c</file>
-            <file>file:/C:/Munka/Sajat/VGM/drivers/microchip/PIC18F452/dio/inc/dio_drv.h</file>
-            <file>file:/C:/Munka/Sajat/VGM/modules/sn76489/src/sn76489.c</file>
-            <file>file:/C:/Munka/Sajat/VGM/app/src/gpio.c</file>
-            <file>file:/C:/Munka/Sajat/VGM/app/inc/interrupt.h</file>
+            <file>file:/C:/Munka/Sajat/OOPic18/drivers/microchip/PIC18F452/uart/src/uart.c</file>
+            <file>file:/C:/Munka/Sajat/OOPic18/app/inc/interrupt.h</file>
+            <file>file:/C:/Munka/Sajat/OOPic18/app/src/main.c</file>
+            <file>file:/C:/Munka/Sajat/OOPic18/drivers/microchip/PIC18F452/uart/inc/uart.h</file>
         </group>
     </open-files>
 </project-private>

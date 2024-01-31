@@ -40,18 +40,19 @@ typedef struct sn76489_cfg_tst
     //void                (*toggle)(void);
 } sn76489_cfg_tst;
 
-typedef struct sn76489_tst
+typedef struct sn76489_tst sn76489_tst;
+struct sn76489_tst
 {
     /* PUBLIC */
     sn76489_cfg_tst     config_st;
     sn76489_status_ten  status_en;
 
     /* PRIVATE */
-    void                (*write_enabled)(struct sn76489_tst *self, bool high_or_low_u8);
-    void                (*write_port)(struct sn76489_tst *self, uint8_t data_u8);
-    void                (*send_byte)(struct sn76489_tst *self, uint8_t byte_u8);
-    void                (*psg_silence)(struct sn76489_tst *self);
-}sn76489_tst;
+    void                (*write_enabled)(sn76489_tst *self, bool high_or_low_u8);
+    void                (*write_port)(sn76489_tst *self, uint8_t data_u8);
+    void                (*send_byte)(sn76489_tst *self, uint8_t byte_u8);
+    void                (*psg_silence)(sn76489_tst *self);
+};
 
 void sn76489_init(sn76489_tst *self);
 #endif //SN76489_H

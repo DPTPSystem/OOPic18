@@ -271,18 +271,19 @@ typedef struct sn76489_cfg_tst
 
 } sn76489_cfg_tst;
 
-typedef struct sn76489_tst
+typedef struct sn76489_tst sn76489_tst;
+struct sn76489_tst
 {
 
     sn76489_cfg_tst config_st;
     sn76489_status_ten status_en;
 
 
-    void (*write_enabled)(struct sn76489_tst *self, _Bool high_or_low_u8);
-    void (*write_port)(struct sn76489_tst *self, uint8_t data_u8);
-    void (*send_byte)(struct sn76489_tst *self, uint8_t byte_u8);
-    void (*psg_silence)(struct sn76489_tst *self);
-}sn76489_tst;
+    void (*write_enabled)(sn76489_tst *self, _Bool high_or_low_u8);
+    void (*write_port)(sn76489_tst *self, uint8_t data_u8);
+    void (*send_byte)(sn76489_tst *self, uint8_t byte_u8);
+    void (*psg_silence)(sn76489_tst *self);
+};
 
 void sn76489_init(sn76489_tst *self);
 # 10 "../modules/sn76489/src/sn76489.c" 2
@@ -438,6 +439,7 @@ extern dio_if_tst *led_out_pst;
 void gpio_init_pins(void);
 void gpio_callback(void);
 void timer0(void);
+void init_usart(void);
 # 11 "../modules/sn76489/src/sn76489.c" 2
 
 

@@ -14,6 +14,7 @@
                 <sourceRootElem>../modules/interfaces</sourceRootElem>
                 <sourceRootElem>../modules/sn76489</sourceRootElem>
                 <sourceRootElem>../drivers/microchip/PIC18F452/dio</sourceRootElem>
+                <sourceRootElem>../drivers/microchip/PIC18F452/uart</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

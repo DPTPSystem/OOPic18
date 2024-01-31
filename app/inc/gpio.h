@@ -18,6 +18,7 @@ extern dio_if_tst *led_out_pst;
 void gpio_init_pins(void);
 void gpio_callback(void);
 void timer0(void);
+void init_usart(void);
 
 #endif	/* GPIO_H */
 

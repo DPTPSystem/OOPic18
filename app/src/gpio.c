@@ -74,3 +74,17 @@ void timer0(void){
 	INTCONbits.TMR0IE = 1;		// Timer tiltása
 	TMR0L = 0xF0;
 }
+
+void init_usart(void){
+	//TRISC = 0b10010000;
+	TXSTA = 0b00100000;
+    TXSTAbits.BRGH = 0;
+	RCSTA = 0b00010000;
+	// Baud rate if BRGH = 1
+    // Baud Rate = FOSC / (16 * (X + 1))
+    // SPBRG = 40000000 / (16* 19 + 1)) = 125000
+    // X = (FOSC / Baud Rate / 16) - 1
+    // Default settings 9600 baudrate
+	SPBRG = 64;
+	RCSTAbits.SPEN = 1;
+}

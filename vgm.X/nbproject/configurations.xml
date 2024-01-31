@@ -10,6 +10,14 @@
           <itemPath>../drivers/microchip/PIC18F452/dio/src/dio_drv.c</itemPath>
         </logicalFolder>
       </logicalFolder>
+      <logicalFolder name="uart" displayName="uart" projectFiles="true">
+        <logicalFolder name="inc" displayName="inc" projectFiles="true">
+          <itemPath>../drivers/microchip/PIC18F452/uart/inc/uart.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="src" displayName="src" projectFiles="true">
+          <itemPath>../drivers/microchip/PIC18F452/uart/src/uart.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -57,6 +65,7 @@
     <Elem>../modules/interfaces</Elem>
     <Elem>../modules/sn76489</Elem>
     <Elem>../drivers/microchip/PIC18F452/dio</Elem>
+    <Elem>../drivers/microchip/PIC18F452/uart</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -110,7 +119,7 @@
         <property key="define-macros" value=""/>
         <property key="disable-optimizations" value="true"/>
         <property key="extra-include-directories"
-                  value="..\app\inc;..\drivers\microchip\PIC18F452\dio\inc;..\modules\interfaces\inc;..\modules\sn76489\inc"/>
+                  value="..\app\inc;..\drivers\microchip\PIC18F452\dio\inc;..\drivers\microchip\PIC18F452\uart\inc;..\modules\interfaces\inc;..\modules\sn76489\inc"/>
         <property key="favor-optimization-for" value="-speed,+space"/>
         <property key="garbage-collect-data" value="true"/>
         <property key="garbage-collect-functions" value="true"/>
