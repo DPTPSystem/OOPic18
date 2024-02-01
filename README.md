@@ -13,6 +13,8 @@ Microchip PIC családból a PIC18F442, 452 és PIC18F46k22 MCU-ra 99%-ban felhú
 A projekt drivere kifjezetten PIC18F452-re van oiptimalizálva, 442-nék a linker állomány változik és emiatt a memória területünk csak fele akkora. PIC18F46k22-nél pedig, mind a configurációs beállítás mind pedig az egyes regiszterek változhatnak ezért 
 a drivert mindenkép illeszteni illetve áttírni szükséges. 
 
+Megjegyzés: Sajnos a kivánt célt, hogy objektum orientált struktúrában készítsül el a VGM jeljátszónkat, nem lehetséges mert a PIC18-as családban a stack mérete korlátozza a driverek és modulok alkalmazását.
+
 # Folyamat
 A programozási és tesztelési feladatok folyamatosan fognak bővülni, függően a lehetőségeimtől. Egyes részek közt akár hetek vagy hónapok is eltellhetnek. A projekt várható befejezése nincs meghatározva, nem sürgős.
 
@@ -23,6 +25,8 @@ A programozási és tesztelési feladatok folyamatosan fognak bővülni, függő
 * 2024.01.12. - 1uS megszakítás beállítva és fő ciklusban egy 1mS-es feltétel ág.
 * 2024.01.30. - uart megszakítás kezelése, beállítása. Ha az uart driver elkészül, akkor lehet csak véglegesíteni a megszakítás kezelést
 * 2024.01.31. - uart driver hozzáadása a projekthez (még nincs befejezve)
+* 2024.02.01. - Sajnos a PIC18-as család nem képes kezelni ezt a fajta driver struktúrális felépítést mivel túl kicsi a stack memóriája, így a projekt maximum a dio
+driver szintjén ragad meg. Ebből is lehet bőven tanulni. A projekt folytatása egy fejlettebb MCU-ra fog átköltözni, amely ARM elapú lesz.
 
 # Cél
 * OO programozás és struktúrális programozás tanulása, elmélyítése

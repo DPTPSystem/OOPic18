@@ -3961,10 +3961,15 @@ typedef union _union16 {
   };
 } union16;
 # 14 "../app/inc\\main.h" 2
+# 15 "../app/src/main.c" 2
 
-# 1 "../modules/sn76489/inc\\sn76489.h" 1
-# 13 "../modules/sn76489/inc\\sn76489.h"
-# 1 "../modules/interfaces/inc\\common_types.h" 1
+# 1 "../app/inc\\gpio.h" 1
+# 14 "../app/inc\\gpio.h"
+# 1 "../drivers/microchip/PIC18F452/dio/inc\\dio_drv.h" 1
+# 15 "../drivers/microchip/PIC18F452/dio/inc\\dio_drv.h"
+# 1 "../modules/interfaces/inc\\dio_if.h" 1
+# 11 "../modules/interfaces/inc\\dio_if.h"
+# 1 "../modules/interfaces/inc/common_types.h" 1
 
 
 
@@ -3972,7 +3977,7 @@ typedef union _union16 {
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdbool.h" 1 3
-# 7 "../modules/interfaces/inc\\common_types.h" 2
+# 7 "../modules/interfaces/inc/common_types.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stddef.h" 1 3
 # 19 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stddef.h" 3
@@ -3980,19 +3985,19 @@ typedef union _union16 {
 # 138 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef int ptrdiff_t;
 # 20 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stddef.h" 2 3
-# 8 "../modules/interfaces/inc\\common_types.h" 2
+# 8 "../modules/interfaces/inc/common_types.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\limits.h" 1 3
 # 10 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\limits.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/limits.h" 1 3
 # 11 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\limits.h" 2 3
-# 9 "../modules/interfaces/inc\\common_types.h" 2
+# 9 "../modules/interfaces/inc/common_types.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\float.h" 1 3
 # 45 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\float.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/float.h" 1 3
 # 46 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\float.h" 2 3
-# 10 "../modules/interfaces/inc\\common_types.h" 2
+# 10 "../modules/interfaces/inc/common_types.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\assert.h" 1 3
 # 12 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\assert.h" 3
@@ -4003,7 +4008,7 @@ typedef int ptrdiff_t;
 
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
-# 11 "../modules/interfaces/inc\\common_types.h" 2
+# 11 "../modules/interfaces/inc/common_types.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\string.h" 3
@@ -4062,7 +4067,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 12 "../modules/interfaces/inc\\common_types.h" 2
+# 12 "../modules/interfaces/inc/common_types.h" 2
 
 
 
@@ -4075,9 +4080,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 typedef float float32_t;
 typedef double float64_t;
-# 13 "../modules/sn76489/inc\\sn76489.h" 2
-
-# 1 "../modules/interfaces/inc\\dio_if.h" 1
+# 11 "../modules/interfaces/inc\\dio_if.h" 2
 # 26 "../modules/interfaces/inc\\dio_if.h"
 typedef struct dio_if_tst
 {
@@ -4089,45 +4092,8 @@ typedef struct dio_if_tst
     uint16_t filter_time_ms_u16;
     _Bool filtered_state_b;
 } dio_if_tst;
-# 14 "../modules/sn76489/inc\\sn76489.h" 2
-# 28 "../modules/sn76489/inc\\sn76489.h"
-typedef enum SN76489_STATUS
-{
- SN76489_STATUS_INIT,
- SN76489_STATUS_ONLINE,
- SN76489_STATUS_OFFLINE,
-    SN76489_STATUS_BUSY,
- SN76489_STATUS_UNKNOWN
-}sn76489_status_ten;
+# 16 "../drivers/microchip/PIC18F452/dio/inc\\dio_drv.h" 2
 
-typedef struct sn76489_cfg_tst
-{
-    dio_if_tst *dout_relay1_pst;
-
-} sn76489_cfg_tst;
-
-typedef struct sn76489_tst sn76489_tst;
-struct sn76489_tst
-{
-
-    sn76489_cfg_tst config_st;
-    sn76489_status_ten status_en;
-
-
-    void (*write_enabled)(sn76489_tst *self, _Bool high_or_low_u8);
-    void (*write_port)(sn76489_tst *self, uint8_t data_u8);
-    void (*send_byte)(sn76489_tst *self, uint8_t byte_u8);
-    void (*psg_silence)(sn76489_tst *self);
-};
-
-void sn76489_init(sn76489_tst *self);
-# 15 "../app/inc\\main.h" 2
-# 15 "../app/src/main.c" 2
-
-# 1 "../app/inc\\gpio.h" 1
-# 14 "../app/inc\\gpio.h"
-# 1 "../drivers/microchip/PIC18F452/dio/inc\\dio_drv.h" 1
-# 17 "../drivers/microchip/PIC18F452/dio/inc\\dio_drv.h"
 typedef enum
 {
     DIO_OUTPUT = 0,
@@ -4278,43 +4244,6 @@ void timer0(void);
 void init_usart(void);
 # 16 "../app/src/main.c" 2
 
-# 1 "../drivers/microchip/PIC18F452/uart/inc\\uart.h" 1
-# 28 "../drivers/microchip/PIC18F452/uart/inc\\uart.h"
-typedef enum UART_STATE
-{
-    UART_INIT = 0,
-    UART_READY,
-    UART_ERROR
-}uart_state_ten;
-
-typedef struct uart_config_tst uart_config_tst;
-struct uart_config_tst
-{
-    void (*set_baud)(uint32_t baud_rate_u32);
-};
-
-typedef struct uart_tst *uart_tst;
-struct uart_tst
-{
-
-    uart_config_tst uart_conf_st;
-
-
-    uart_state_ten state_en;
-    uint8_t read_data_u8;
-    uint8_t buff_u8[64];
-    uint8_t buff_index_u8;
-    uint32_t data_size_u32;
-    uint8_t (*read)(uart_tst self, uint8_t data_u8);
-    void (*write)(uint8_t data_u8);
-    void (*buff_clear)(uart_tst self);
-};
-
-extern volatile uart_tst uart_st;
-
-void uart_drv_init(uart_tst self);
-# 17 "../app/src/main.c" 2
-
 # 1 "../app/inc\\interrupt.h" 1
 # 14 "../app/inc\\interrupt.h"
 volatile uint16_t one_us_count_u16 = 0;
@@ -4322,21 +4251,6 @@ volatile uint16_t one_us_count_u16 = 0;
 void __attribute__((picinterrupt(("high_priority")))) hi_isr(void)
 {
 
-    if(PIR1bits.RCIF){
-  if(RCSTA & 6){
-   unsigned char temp;
-   RCSTAbits.SREN = 0;
-   temp = RCREG;
-   RCSTAbits.SREN = 1;
-  }else{
-
-
-
-
-
-  }
-  PIR1bits.RCIF = 0;
- }
 }
 
 
@@ -4346,19 +4260,12 @@ void __attribute__((picinterrupt(("low_priority")))) lo_isr(void)
     if (INTCONbits.TMR0IF)
  {
   TMR0L = 0xF0;
-
         one_us_count_u16++;
         INTCONbits.TMR0IF = 0;
     }
 }
-# 18 "../app/src/main.c" 2
-
-
-
-
-
-volatile uart_tst uart_st;
-# 34 "../app/src/main.c"
+# 17 "../app/src/main.c" 2
+# 31 "../app/src/main.c"
  void led_toggle()
 {
     static uint8_t i;
@@ -4402,8 +4309,6 @@ void setup_pins()
  ADCON0 = 0;
 
  CCP1CON = 0;
-
-    init_usart();
 }
 
 
@@ -4415,11 +4320,6 @@ int main()
 
 
     setup_pins();
-
-
-    uart_drv_init(&uart_st);
-
-
 
 
     led_out_pst->set(led_out_pst, 0);

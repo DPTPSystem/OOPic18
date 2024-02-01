@@ -10,14 +10,6 @@
           <itemPath>../drivers/microchip/PIC18F452/dio/src/dio_drv.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="uart" displayName="uart" projectFiles="true">
-        <logicalFolder name="inc" displayName="inc" projectFiles="true">
-          <itemPath>../drivers/microchip/PIC18F452/uart/inc/uart.h</itemPath>
-        </logicalFolder>
-        <logicalFolder name="src" displayName="src" projectFiles="true">
-          <itemPath>../drivers/microchip/PIC18F452/uart/src/uart.c</itemPath>
-        </logicalFolder>
-      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -36,14 +28,6 @@
         <logicalFolder name="inc" displayName="inc" projectFiles="true">
           <itemPath>../modules/interfaces/inc/common_types.h</itemPath>
           <itemPath>../modules/interfaces/inc/dio_if.h</itemPath>
-        </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="sn76489" displayName="sn76489" projectFiles="true">
-        <logicalFolder name="inc" displayName="inc" projectFiles="true">
-          <itemPath>../modules/sn76489/inc/sn76489.h</itemPath>
-        </logicalFolder>
-        <logicalFolder name="src" displayName="src" projectFiles="true">
-          <itemPath>../modules/sn76489/src/sn76489.c</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -117,9 +101,9 @@
         <property key="default-bitfield-type" value="true"/>
         <property key="default-char-type" value="true"/>
         <property key="define-macros" value=""/>
-        <property key="disable-optimizations" value="true"/>
+        <property key="disable-optimizations" value="false"/>
         <property key="extra-include-directories"
-                  value="..\app\inc;..\drivers\microchip\PIC18F452\dio\inc;..\drivers\microchip\PIC18F452\uart\inc;..\modules\interfaces\inc;..\modules\sn76489\inc"/>
+                  value="..\app\inc;..\drivers\microchip\PIC18F452\dio\inc;..\modules\interfaces\inc"/>
         <property key="favor-optimization-for" value="-speed,+space"/>
         <property key="garbage-collect-data" value="true"/>
         <property key="garbage-collect-functions" value="true"/>
@@ -132,7 +116,7 @@
         <property key="optimization-debug" value="false"/>
         <property key="optimization-invariant-enable" value="false"/>
         <property key="optimization-invariant-value" value="16"/>
-        <property key="optimization-level" value="-O0"/>
+        <property key="optimization-level" value="-O1"/>
         <property key="optimization-speed" value="false"/>
         <property key="optimization-stable-enable" value="false"/>
         <property key="preprocess-assembler" value="true"/>

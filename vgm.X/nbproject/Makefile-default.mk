@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../drivers/microchip/PIC18F452/dio/src/dio_drv.c ../modules/sn76489/src/sn76489.c ../app/src/gpio.c ../app/src/main.c ../drivers/microchip/PIC18F452/uart/src/uart.c
+SOURCEFILES_QUOTED_IF_SPACED=../drivers/microchip/PIC18F452/dio/src/dio_drv.c ../app/src/gpio.c ../app/src/main.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/632523098/dio_drv.p1 ${OBJECTDIR}/_ext/1331532295/sn76489.p1 ${OBJECTDIR}/_ext/1819418535/gpio.p1 ${OBJECTDIR}/_ext/1819418535/main.p1 ${OBJECTDIR}/_ext/666124536/uart.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/632523098/dio_drv.p1.d ${OBJECTDIR}/_ext/1331532295/sn76489.p1.d ${OBJECTDIR}/_ext/1819418535/gpio.p1.d ${OBJECTDIR}/_ext/1819418535/main.p1.d ${OBJECTDIR}/_ext/666124536/uart.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/632523098/dio_drv.p1 ${OBJECTDIR}/_ext/1819418535/gpio.p1 ${OBJECTDIR}/_ext/1819418535/main.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/632523098/dio_drv.p1.d ${OBJECTDIR}/_ext/1819418535/gpio.p1.d ${OBJECTDIR}/_ext/1819418535/main.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/632523098/dio_drv.p1 ${OBJECTDIR}/_ext/1331532295/sn76489.p1 ${OBJECTDIR}/_ext/1819418535/gpio.p1 ${OBJECTDIR}/_ext/1819418535/main.p1 ${OBJECTDIR}/_ext/666124536/uart.p1
+OBJECTFILES=${OBJECTDIR}/_ext/632523098/dio_drv.p1 ${OBJECTDIR}/_ext/1819418535/gpio.p1 ${OBJECTDIR}/_ext/1819418535/main.p1
 
 # Source Files
-SOURCEFILES=../drivers/microchip/PIC18F452/dio/src/dio_drv.c ../modules/sn76489/src/sn76489.c ../app/src/gpio.c ../app/src/main.c ../drivers/microchip/PIC18F452/uart/src/uart.c
+SOURCEFILES=../drivers/microchip/PIC18F452/dio/src/dio_drv.c ../app/src/gpio.c ../app/src/main.c
 
 
 
@@ -92,23 +92,15 @@ ${OBJECTDIR}/_ext/632523098/dio_drv.p1: ../drivers/microchip/PIC18F452/dio/src/d
 	@${MKDIR} "${OBJECTDIR}/_ext/632523098" 
 	@${RM} ${OBJECTDIR}/_ext/632523098/dio_drv.p1.d 
 	@${RM} ${OBJECTDIR}/_ext/632523098/dio_drv.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../drivers/microchip/PIC18F452/uart/inc" -I"../modules/interfaces/inc" -I"../modules/sn76489/inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/632523098/dio_drv.p1 ../drivers/microchip/PIC18F452/dio/src/dio_drv.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../modules/interfaces/inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/632523098/dio_drv.p1 ../drivers/microchip/PIC18F452/dio/src/dio_drv.c 
 	@-${MV} ${OBJECTDIR}/_ext/632523098/dio_drv.d ${OBJECTDIR}/_ext/632523098/dio_drv.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/632523098/dio_drv.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/1331532295/sn76489.p1: ../modules/sn76489/src/sn76489.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1331532295" 
-	@${RM} ${OBJECTDIR}/_ext/1331532295/sn76489.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1331532295/sn76489.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../drivers/microchip/PIC18F452/uart/inc" -I"../modules/interfaces/inc" -I"../modules/sn76489/inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1331532295/sn76489.p1 ../modules/sn76489/src/sn76489.c 
-	@-${MV} ${OBJECTDIR}/_ext/1331532295/sn76489.d ${OBJECTDIR}/_ext/1331532295/sn76489.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1331532295/sn76489.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/_ext/1819418535/gpio.p1: ../app/src/gpio.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/_ext/1819418535" 
 	@${RM} ${OBJECTDIR}/_ext/1819418535/gpio.p1.d 
 	@${RM} ${OBJECTDIR}/_ext/1819418535/gpio.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../drivers/microchip/PIC18F452/uart/inc" -I"../modules/interfaces/inc" -I"../modules/sn76489/inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1819418535/gpio.p1 ../app/src/gpio.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../modules/interfaces/inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1819418535/gpio.p1 ../app/src/gpio.c 
 	@-${MV} ${OBJECTDIR}/_ext/1819418535/gpio.d ${OBJECTDIR}/_ext/1819418535/gpio.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1819418535/gpio.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -116,40 +108,24 @@ ${OBJECTDIR}/_ext/1819418535/main.p1: ../app/src/main.c  nbproject/Makefile-${CN
 	@${MKDIR} "${OBJECTDIR}/_ext/1819418535" 
 	@${RM} ${OBJECTDIR}/_ext/1819418535/main.p1.d 
 	@${RM} ${OBJECTDIR}/_ext/1819418535/main.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../drivers/microchip/PIC18F452/uart/inc" -I"../modules/interfaces/inc" -I"../modules/sn76489/inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1819418535/main.p1 ../app/src/main.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../modules/interfaces/inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1819418535/main.p1 ../app/src/main.c 
 	@-${MV} ${OBJECTDIR}/_ext/1819418535/main.d ${OBJECTDIR}/_ext/1819418535/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1819418535/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/666124536/uart.p1: ../drivers/microchip/PIC18F452/uart/src/uart.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/666124536" 
-	@${RM} ${OBJECTDIR}/_ext/666124536/uart.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/666124536/uart.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../drivers/microchip/PIC18F452/uart/inc" -I"../modules/interfaces/inc" -I"../modules/sn76489/inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/666124536/uart.p1 ../drivers/microchip/PIC18F452/uart/src/uart.c 
-	@-${MV} ${OBJECTDIR}/_ext/666124536/uart.d ${OBJECTDIR}/_ext/666124536/uart.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/666124536/uart.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/_ext/632523098/dio_drv.p1: ../drivers/microchip/PIC18F452/dio/src/dio_drv.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/_ext/632523098" 
 	@${RM} ${OBJECTDIR}/_ext/632523098/dio_drv.p1.d 
 	@${RM} ${OBJECTDIR}/_ext/632523098/dio_drv.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../drivers/microchip/PIC18F452/uart/inc" -I"../modules/interfaces/inc" -I"../modules/sn76489/inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/632523098/dio_drv.p1 ../drivers/microchip/PIC18F452/dio/src/dio_drv.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../modules/interfaces/inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/632523098/dio_drv.p1 ../drivers/microchip/PIC18F452/dio/src/dio_drv.c 
 	@-${MV} ${OBJECTDIR}/_ext/632523098/dio_drv.d ${OBJECTDIR}/_ext/632523098/dio_drv.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/632523098/dio_drv.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/1331532295/sn76489.p1: ../modules/sn76489/src/sn76489.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1331532295" 
-	@${RM} ${OBJECTDIR}/_ext/1331532295/sn76489.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1331532295/sn76489.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../drivers/microchip/PIC18F452/uart/inc" -I"../modules/interfaces/inc" -I"../modules/sn76489/inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1331532295/sn76489.p1 ../modules/sn76489/src/sn76489.c 
-	@-${MV} ${OBJECTDIR}/_ext/1331532295/sn76489.d ${OBJECTDIR}/_ext/1331532295/sn76489.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1331532295/sn76489.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/_ext/1819418535/gpio.p1: ../app/src/gpio.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/_ext/1819418535" 
 	@${RM} ${OBJECTDIR}/_ext/1819418535/gpio.p1.d 
 	@${RM} ${OBJECTDIR}/_ext/1819418535/gpio.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../drivers/microchip/PIC18F452/uart/inc" -I"../modules/interfaces/inc" -I"../modules/sn76489/inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1819418535/gpio.p1 ../app/src/gpio.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../modules/interfaces/inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1819418535/gpio.p1 ../app/src/gpio.c 
 	@-${MV} ${OBJECTDIR}/_ext/1819418535/gpio.d ${OBJECTDIR}/_ext/1819418535/gpio.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1819418535/gpio.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
@@ -157,17 +133,9 @@ ${OBJECTDIR}/_ext/1819418535/main.p1: ../app/src/main.c  nbproject/Makefile-${CN
 	@${MKDIR} "${OBJECTDIR}/_ext/1819418535" 
 	@${RM} ${OBJECTDIR}/_ext/1819418535/main.p1.d 
 	@${RM} ${OBJECTDIR}/_ext/1819418535/main.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../drivers/microchip/PIC18F452/uart/inc" -I"../modules/interfaces/inc" -I"../modules/sn76489/inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1819418535/main.p1 ../app/src/main.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../modules/interfaces/inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1819418535/main.p1 ../app/src/main.c 
 	@-${MV} ${OBJECTDIR}/_ext/1819418535/main.d ${OBJECTDIR}/_ext/1819418535/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1819418535/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/_ext/666124536/uart.p1: ../drivers/microchip/PIC18F452/uart/src/uart.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/666124536" 
-	@${RM} ${OBJECTDIR}/_ext/666124536/uart.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/666124536/uart.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../drivers/microchip/PIC18F452/uart/inc" -I"../modules/interfaces/inc" -I"../modules/sn76489/inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/666124536/uart.p1 ../drivers/microchip/PIC18F452/uart/src/uart.c 
-	@-${MV} ${OBJECTDIR}/_ext/666124536/uart.d ${OBJECTDIR}/_ext/666124536/uart.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/666124536/uart.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
@@ -188,13 +156,13 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 ${DISTDIR}/vgm.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} ${DISTDIR} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=${DISTDIR}/vgm.X.${IMAGE_TYPE}.map  -D__DEBUG=1  -mdebugger=none  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../drivers/microchip/PIC18F452/uart/inc" -I"../modules/interfaces/inc" -I"../modules/sn76489/inc" -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto        $(COMPARISON_BUILD) -Wl,--memorysummary,${DISTDIR}/memoryfile.xml -o ${DISTDIR}/vgm.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=${DISTDIR}/vgm.X.${IMAGE_TYPE}.map  -D__DEBUG=1  -mdebugger=none  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../modules/interfaces/inc" -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto        $(COMPARISON_BUILD) -Wl,--memorysummary,${DISTDIR}/memoryfile.xml -o ${DISTDIR}/vgm.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 	@${RM} ${DISTDIR}/vgm.X.${IMAGE_TYPE}.hex 
 	
 else
 ${DISTDIR}/vgm.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} ${DISTDIR} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=${DISTDIR}/vgm.X.${IMAGE_TYPE}.map  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../drivers/microchip/PIC18F452/uart/inc" -I"../modules/interfaces/inc" -I"../modules/sn76489/inc" -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     $(COMPARISON_BUILD) -Wl,--memorysummary,${DISTDIR}/memoryfile.xml -o ${DISTDIR}/vgm.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=${DISTDIR}/vgm.X.${IMAGE_TYPE}.map  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"../app/inc" -I"../drivers/microchip/PIC18F452/dio/inc" -I"../modules/interfaces/inc" -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     $(COMPARISON_BUILD) -Wl,--memorysummary,${DISTDIR}/memoryfile.xml -o ${DISTDIR}/vgm.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 	
 endif
 

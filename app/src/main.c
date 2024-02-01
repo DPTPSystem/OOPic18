@@ -1,6 +1,6 @@
 /******************************************************
  * file name:   main.c
- * title:       main program, VGM Player
+ * title:       main program
  * autor:       DPTP System
  * date:        2024.01.04.
  * email:       don_peter[kukac]freemail[pont]hu
@@ -14,14 +14,11 @@
 //------------------------------------------------------------------------------
 #include "main.h"
 #include "gpio.h"
-#include "uart.h"
 #include "interrupt.h"
 
 //------------------------------------------------------------------------------
 // Variables
 //------------------------------------------------------------------------------
-volatile uart_tst uart_st;
-//sn76489_tst sn76489_st;
 
 //------------------------------------------------------------------------------
 // Interrupt functions
@@ -74,8 +71,6 @@ void setup_pins()
 	ADCON0 = 0;
 
 	CCP1CON = 0;				// Coperátorok kikapcsolva
-    
-    init_usart();
 }
 
 
@@ -87,11 +82,6 @@ int main()
   
     // All pin setting
     setup_pins();
-    
-    // uart driver init
-    uart_drv_init(&uart_st);
-    
-    //sn76489_init(&sn76489_st);
 
     // As long as everything is fine, the LED does not light up
     led_out_pst->set(led_out_pst, 0); 

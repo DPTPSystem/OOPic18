@@ -12,6 +12,5 @@
 
 #include <xc.h>
 #include "cpu_set.h"
-#include "sn76489.h"
 
 #endif	/* MAIN_H */

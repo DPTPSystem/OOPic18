@@ -4220,23 +4220,13 @@ dio_drv_tst led_out_st= { .cfg_st = {
                                             .polarity_u1 = DIO_ACTIVE_HIGH
                                         }
                         };
-
-dio_drv_tst d0_out_st= { .cfg_st = {
-                                            .pin_u8 = PORTD_0,
-                                            .direction_u1 = DIO_OUTPUT,
-                                            .mode_u1 = DIO_MODE_NORMAL,
-                                            .state_u1 = DIO_STATE_INACTIVE,
-                                            .polarity_u1 = DIO_ACTIVE_HIGH
-                                        }
-                        };
-
-
+# 35 "../app/src/gpio.c"
 dio_if_tst *led_out_pst;
 
 void gpio_init_pins(void)
 {
     init_dio_drv(&led_out_st);
-    init_dio_drv(&d0_out_st);
+
 
 
 
@@ -4272,18 +4262,4 @@ void timer0(void){
  T0CONbits.T0PS0 = 0;
  INTCONbits.TMR0IE = 1;
  TMR0L = 0xF0;
-}
-
-void init_usart(void){
-
- TXSTA = 0b00100000;
-    TXSTAbits.BRGH = 0;
- RCSTA = 0b00010000;
-
-
-
-
-
- SPBRG = 64;
- RCSTAbits.SPEN = 1;
 }
